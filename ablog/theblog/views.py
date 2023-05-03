@@ -16,6 +16,14 @@ class HomeView(ListView):
     # ordering = ['-id']
 
 
+# creating a function instead of using class just to have
+# an example of what it looks like as a function
+# cats is short for categories
+def CategoryView(request, cats):
+    category_posts = Post.objects.filter(category=cats)
+    return render(request, 'categories.html', {'cats': cats.title(), 'category_posts': category_posts})
+
+
 class ArticleDetailView(DetailView):
     model = Post
     template_name = 'article_details.html'
