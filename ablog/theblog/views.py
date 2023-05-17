@@ -41,7 +41,7 @@ class HomeView(ListView):
 
 def CategoryListView(request):
     cat_menu_list = Category.objects.all()
-    return render(request, 'category_list.html',
+    return render(request, 'category-list.html',
                   {'cat_menu_list': cat_menu_list})
 
 
